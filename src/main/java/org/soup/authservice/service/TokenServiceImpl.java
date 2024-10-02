@@ -45,7 +45,7 @@ public class TokenServiceImpl implements TokenService {
                 .orElseThrow(() -> new InvalidCookieException("Refresh token not found"));
 
         if (!jwtUtils.verifyToken(refreshToken)) {
-            throw new InvalidCookieException("Refresh token not found");
+            throw new InvalidCookieException("Refresh token invalid");
         }
 
         UUID id = jwtUtils.getIdFromToken(refreshToken);
@@ -55,11 +55,12 @@ public class TokenServiceImpl implements TokenService {
     }
 
     private Optional<String> getCookieValue(HttpServletRequest request, String name) {
-        if (request.getCookies() == null) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies == null) {
             return Optional.empty();
         }
 
-        return Arrays.stream(request.getCookies())
+        return Arrays.stream(cookies)
                 .filter(cookie -> name.equals(cookie.getName()))
                 .map(Cookie::getValue)
                 .findFirst();
