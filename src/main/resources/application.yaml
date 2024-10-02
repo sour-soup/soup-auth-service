@@ -12,8 +12,17 @@ spring:
       ddl-auto: validate
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+security:
+  jwt:
+    salt: ${JWT_SALT:over-salted-soup}
+  access-token:
+    expirationMillis: ${ACCESS_TOKEN_EXPIRATION:86400000} #один день
+  refresh-token:
+    expirationMillis: ${REFRESH_TOKEN_EXPIRATION:2592000000} #15 дней
+  password:
+    salt: ${PASSWORD_SALT:very-over-salted-soup}
