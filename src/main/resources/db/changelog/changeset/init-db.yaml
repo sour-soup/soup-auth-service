@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: init-db
+      author: sour-soup
+      changes:
+        - sql:
+            splitStatements: false
+            stripComments: true
+            sql: "CREATE EXTENSION IF NOT EXISTS \"pgcrypto\""

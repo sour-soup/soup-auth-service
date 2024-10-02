@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/init-db.yaml
+  - include:
+      file: db/changelog/changeset/create-users.yaml
+  - include:
+      file: db/changelog/changeset/add-users-indexes.yaml
