@@ -19,7 +19,7 @@ spring:
 
 security:
   jwt:
-    salt: ${JWT_SALT:over-salted-soup}
+    secret: ${JWT_SECRET:over-salted-soup}
   access-token:
     expirationMillis: ${ACCESS_TOKEN_EXPIRATION:86400000} #один день
   refresh-token:

@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @Component
 public final class JwtUtils {
-    @Value("${security.jwt.salt}")
+    @Value("${security.jwt.secret}")
     private String salt;
 
     public String generateToken(User user, long expirationMillis) {
