@@ -26,7 +26,7 @@ To configure the application, use the following environment variables:
 - `DB_NAME`: PostgreSQL database name (default: `auth_db`)
 - `DB_USERNAME`: PostgreSQL username (default: `auth_user`)
 - `DB_PASSWORD`: PostgreSQL password (default: `password`)
-- `JWT_SALT`: Secret salt for JWT signing (default: `over-salted-soup`)
+- `JWT_SECRET`: Secret salt for JWT signing (default: `over-salted-soup`)
 - `ACCESS_TOKEN_EXPIRATION`: Expiration time for access tokens in milliseconds (default: `86400000` - 1 day)
 - `REFRESH_TOKEN_EXPIRATION`: Expiration time for refresh tokens in milliseconds (default: `2592000000` - 15 days)
 - `PASSWORD_SALT`: Salt used for password hashing (default: `very-over-salted-soup`)
